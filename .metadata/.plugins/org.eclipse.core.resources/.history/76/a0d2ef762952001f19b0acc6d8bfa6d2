@@ -1,0 +1,27 @@
+package com.cg.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cg.dao.EducationLoanDao;
+import com.cg.entity.EducationLoan;
+import com.cg.repo.EducationRepo;
+
+@Service
+public class EducationService {
+
+	@Autowired
+	private EducationRepo eductionrepo;
+	
+	 public EducationLoanDao applyEducationLoan(EducationLoanDao loanRequest) {
+	        return eductionrepo.save(loanRequest);
+	    }
+
+	    public Optional<EducationLoan> getLoansByCustomer(String panNo) {
+	        return eductionrepo.findById(panNo);
+	    }
+	
+}

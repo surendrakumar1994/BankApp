@@ -1,0 +1,27 @@
+package com.cg.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
+@Service
+public class AdminService {
+
+	 @Autowired
+	    private RestTemplate restTemplate;
+	    
+	    @CircuitBreaker(name = "loanValidation", fallbackMethod = "loanValidationFallback")
+	    public ResponseEntity<String> validateLoan(String pan) {
+	        // Call Loan Validation MS
+	        return restTemplate.getForEntity("http://loan-validation-ms/validate/" + pan, String.class);
+	    }
+	    
+	    public ResponseEntity<String> loanValidationFallback(String pan, Throwable t) {
+	        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("Loan validation service is down");
+	    }
+}

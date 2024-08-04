@@ -1,0 +1,11 @@
+package com.cg.service;
+
+import com.cg.dao.EducationLoanDao;
+
+@Service
+public interface EducationSERVICE {
+	
+	
+	
+public EducationLoanDao applyEducationLoan(EducationLoanDao dao);
+}

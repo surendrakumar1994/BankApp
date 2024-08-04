@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: admin
+  datasource:
+    url: jdbc:mysql://localhost:3306/admin_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+  cloud:
+    config:
+      uri: http://localhost:8888
+  discovery:
+    client:
+      simple:
+        enabled: true

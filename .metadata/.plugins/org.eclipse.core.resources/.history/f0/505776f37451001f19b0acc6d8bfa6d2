@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: loan
+  datasource:
+    url: jdbc:mysql://localhost:3306/loan_validation_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+  cloud:
+    config:
+      uri: http://localhost:8888
+  discovery:
+    client:
+      simple:
+        enabled: true

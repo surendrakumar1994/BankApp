@@ -1,0 +1,68 @@
+package com.cg.controller;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("/admin")
+public class AdminController {
+	
+	
+	@PostMapping("/admin/approveAndReject")
+	public ResponseEntity<Object> approveLoan(@RequestBody Map<String,String> panId){
+		// get cibil by restTemplate
+		//get payment history by restemplate
+		
+		//agar cibil ya payment history ka flag false hai to customer table ke flag me false dal do. elss=e true;
+		
+		return null;
+	}
+	
+	@PostMapping("/admin/passwordReset")
+	public ResponseEntity<Object> passwordReset(@RequestBody Map<String,String> passDetails){
+		 // get customer details by pan id
+		
+		// set password
+		
+		//save details
+		
+		return null;
+	}
+	@PostMapping("/admin/requestApproval")
+	public ResponseEntity<Object> requestApproval(@RequestBody Map<String,String> reqDetails){
+		 // do customer details loan flag true
+		
+		
+		
+		//save details
+		
+		return null;
+	}
+	
+
+@PostMapping("/admin/pendingLoans")
+public ResponseEntity<Object> pendingLoans(@RequestBody Map<String,String> reqDetails){
+	 // do customer details loan flag true
+	
+	
+	
+	//save details
+	
+	return null;
+}
+
+@PostMapping("/admin/listLoans")
+public ResponseEntity<Object> listLoans(@RequestBody Map<String,String> reqDetails){
+	 // do customer details loan flag true
+	
+	
+	
+	//save details
+	
+	return null;
+}
+
+}

@@ -1,0 +1,18 @@
+package com.cg.dao;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+public class CustomerDao {
+  
+   private String panId;
+   private String firstName;
+   private String lastName;
+   private boolean flag;
+   private int listLoan;
+   private int pendingLoans;
+   
+}

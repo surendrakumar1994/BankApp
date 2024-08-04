@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.cg.controller.LoanValidateController.java&apos; to &apos;LoanValidationController.java&apos;&#x0D;&#x0A;- Original project: &apos;Loan&apos;&#x0D;&#x0A;- Original element: &apos;com.cg.controller.LoanValidateController.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.cg.controller.LoanValidationController.java&apos;" description="Rename compilation unit &apos;LoanValidateController.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.cg.controller{LoanValidateController.java" name="LoanValidationController.java" references="false" stamp="1722666631643" version="1.0"/>
+</session>

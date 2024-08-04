@@ -1,0 +1,31 @@
+package com.cg.utility;
+
+import com.cg.dao.EducationLoanDao;
+import com.cg.dao.PersonalLoanDao;
+import com.cg.entity.EducationLoan;
+import com.cg.entity.PersonalLoan;
+
+public class CustomerMapper {
+
+    public static EducationLoan toDAO(EducationLoanDao customer) {
+        if (customer == null) {
+            return null;
+        }
+        EducationLoan dao = new  EducationLoan();
+        dao.setPanNo(customer.getPanNo());
+        dao.setName(customer.getName());
+       
+        return dao;
+    }
+
+    public static PersonalLoan toEntity(PersonalLoanDao customerDAO) {
+        if (customerDAO == null) {
+            return null;
+        }
+        PersonalLoan person = new  PersonalLoan ();
+      person.setPanNo(customerDAO.getPanNo());
+       person.setName(customerDAO.getName());
+      
+        return person;
+    }
+}

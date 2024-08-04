@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Customer
+  cloud:
+    config:
+      uri: http://localhost:8888
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/custom_db
+    username:
+    password:
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  discovery:
+    client:
+      simple:
+        enabled: true
+  
+  kafka:
+    bootstrap-servers: localhost:9092

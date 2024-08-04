@@ -1,0 +1,24 @@
+public class CustomerMapper {
+
+    public static CustomerDAO toDAO(Customer customer) {
+        if (customer == null) {
+            return null;
+        }
+        CustomerDAO dao = new CustomerDAO();
+        dao.setPan(customer.getPan());
+        dao.setName(customer.getName());
+        dao.setPassword(customer.getPassword());
+        return dao;
+    }
+
+    public static Customer toEntity(CustomerDAO customerDAO) {
+        if (customerDAO == null) {
+            return null;
+        }
+        Customer customer = new Customer();
+        customer.setPan(customerDAO.getPan());
+        customer.setName(customerDAO.getName());
+        customer.setPassword(customerDAO.getPassword());
+        return customer;
+    }
+}

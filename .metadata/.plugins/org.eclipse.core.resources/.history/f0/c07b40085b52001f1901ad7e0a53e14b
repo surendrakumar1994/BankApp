@@ -1,0 +1,30 @@
+package com.cg.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/validate")
+public class LoanValidationController {
+
+	   @GetMapping("/cibil/{pan}")
+	    public ResponseEntity<String> getCibil(@PathVariable String pan) {
+	        // Logic to validate the loan
+	        return ResponseEntity.ok("Validation success");
+	    }
+	   
+	   @GetMapping("/payment/{pan}")
+	    public ResponseEntity<String> getPaymentHistory(@PathVariable String pan) {
+	        // Logic to validate the loan
+	        return ResponseEntity.ok("Validation success");
+	    }
+	   
+	   @GetMapping("/loanDetails")
+	    public ResponseEntity<String> loanDetails(@PathVariable String pan) {
+	        // Logic to validate the loan
+	        return ResponseEntity.ok("Validation success");
+	    }
+}

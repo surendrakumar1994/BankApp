@@ -1,0 +1,57 @@
+package com.cg.mapper;
+
+import com.cg.dao.EducationLoanDao;
+import com.cg.dao.HomeLoanDao;
+import com.cg.dao.PersonalLoanDao;
+import com.cg.entity.EducationLoan;
+import com.cg.entity.PersonalLoan;
+
+public class CustomerMapper {
+
+    public static EducationLoanDao eduToDAO(EducationLoan edu) {
+        if (edu == null) {
+            return null;
+        }
+        EducationLoanDao dao = new  EducationLoanDao();
+        dao.setPanNo(edu.getPanNo());
+        dao.setName(edu.getName());
+        
+        return dao;
+    }
+
+    public static EducationLoan toEntity(EducationLoanDao eduDAO) {
+        if (eduDAO == null) {
+            return null;
+        }
+        EducationLoan eduEntity = new  EducationLoan ();
+        eduEntity.setPanNo(eduDAO.getPanNo());
+        eduEntity.setName(eduDAO.getName());
+      
+        return eduEntity;
+    }
+    
+    
+    //
+    public static HomeLoanDao homeToDAO(HomeLoanDao home) {
+        if (home == null) {
+            return null;
+        }
+        HomeLoanDao dao = new  HomeLoanDao();
+        dao.setPanNo(home.getPanNo());
+        dao.setName(home.getName());
+        
+        return dao;
+    }
+
+    public static EducationLoan toEntity(EducationLoanDao eduDAO) {
+        if (eduDAO == null) {
+            return null;
+        }
+        EducationLoan eduEntity = new  EducationLoan ();
+        eduEntity.setPanNo(eduDAO.getPanNo());
+        eduEntity.setName(eduDAO.getName());
+      
+        return eduEntity;
+    }
+    
+}
