@@ -13,9 +13,14 @@ public class Cibil {
 	private String pan;
 	private String score;
 	private boolean low;
+	
+	
+	
+
+
 	public Cibil() {
-		
 	}
+
 	public String getPan() {
 		return pan;
 	}
