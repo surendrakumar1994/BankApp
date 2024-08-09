@@ -10,6 +10,7 @@ public class PaymentHistory {
 	
 	private String pan;
 	private boolean pending;
+	
 	public PaymentHistory(String pan, boolean pending) {
 		this.setPan(pan);
 		this.setPending(pending);

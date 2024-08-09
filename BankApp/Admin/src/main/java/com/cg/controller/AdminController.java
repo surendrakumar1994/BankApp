@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +21,7 @@ import com.cg.entity.Customer;
 import com.cg.repo.CustomerRepository;
 
 @RestController("/admin")
+@RequestMapping
 public class AdminController {
 	  @Autowired
 	    private RestTemplate restTemplate;
@@ -27,7 +29,7 @@ public class AdminController {
 	  @Autowired
 	  private CustomerRepository customerRepository;
 	
-	@PostMapping("/admin/approveAndReject")
+	@PostMapping("/approveAndReject")
 	public ResponseEntity<Object> approveLoan(@RequestBody Map<String,String> request){
 		// get cibil by restTemplate
 		String panId=request.get("pan");
@@ -51,7 +53,7 @@ public class AdminController {
 		
 	}
 	
-	@PostMapping("/admin/passwordReset")
+	@PostMapping("/passwordReset")
 	public ResponseEntity<Object> passwordReset(@RequestBody Map<String,String> passDetails){
 		 // get customer details by pan id
 		customerRepository.saveCustomerByPassword(passDetails.get("panId"),passDetails.get("password"));
@@ -59,7 +61,7 @@ public class AdminController {
 		
 		return new ResponseEntity<>("passwordReset approved",HttpStatus.ACCEPTED);
 	}
-	@PostMapping("/admin/requestApproval")
+	@PostMapping("/requestApproval")
 	public ResponseEntity<Object> requestApproval(@RequestBody Map<String,String> reqDetails){
 		 // do customer details loan flag true
 		customerRepository.saveLoanFlagByTrue(reqDetails.get("panId"),reqDetails.get("loanFlag"));
@@ -71,7 +73,7 @@ public class AdminController {
 	}
 	
 
-@PostMapping("/admin/pendingLoans")
+@PostMapping("/pendingLoans")
 public ResponseEntity<Object> pendingLoans(@RequestBody Map<String,String> reqDetails){
 	 // restemplate call /loanDetails of loan details
 	
@@ -86,7 +88,7 @@ public ResponseEntity<Object> pendingLoans(@RequestBody Map<String,String> reqDe
 //	return null;
 }
 
-@PostMapping("/admin/listLoans")
+@PostMapping("/listLoans")
 public ResponseEntity<Object> listLoans(@RequestBody Map<String,String> reqDetails){
 	// restemplate call /loanDetails of loan details
 	

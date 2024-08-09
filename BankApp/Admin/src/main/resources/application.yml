@@ -1,6 +1,8 @@
 spring:
   application:
     name: admin
+  server:
+      port: 8081
     
   database: h2
   console: true
@@ -10,7 +12,7 @@ datasource:
   platform: h2
   url: jdbc:h2://localhost:8080/h2
   username: sa
-  password: 1234
+  password: password
   driverClassName: org.h2.Driver
   kafka:
     bootstrap-servers: localhost:9092

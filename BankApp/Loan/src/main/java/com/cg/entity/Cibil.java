@@ -40,6 +40,10 @@ public class Cibil {
 		this.score = score;
 		this.low = low;
 	}
+	public Object getPropertyName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }

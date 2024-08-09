@@ -40,6 +40,12 @@ public class PaymentHistory {
 	public void setPending(boolean pending) {
 		this.pending = pending;
 	}
+
+
+	public Object getPropertyName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
